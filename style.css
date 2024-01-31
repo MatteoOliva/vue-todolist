@@ -3,3 +3,12 @@ ul > li > i {
     font-size: 15px;
     cursor: pointer;
 }
+.underline-text {
+    text-decoration:line-through;
+}
+button {
+    cursor: pointer;
+    color: white;
+    background-color: blue
+   
+}

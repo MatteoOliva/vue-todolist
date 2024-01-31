@@ -24,14 +24,19 @@ createApp({
                     text: 'Pulire la casa',
                     done: false,
                 },
-            ]
+            ],
+            newTask: {
+                text: '',
+                done: false,
+            },
         }
-        
+
     },
 
     methods: {
-        deleteTask(n) {
-            this.tasks.splice(n, 1);           
+        deleteTask(i) {
+            this.tasks.splice(i, 1);
+            console.log(i);
         },
     },
 }).mount('#app')

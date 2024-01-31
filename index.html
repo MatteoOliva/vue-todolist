@@ -14,11 +14,24 @@
 </head>
 <body>
 <div id="app">
+    
     <ul>
-        <li v-for="task in tasks" v-show="!task.done" >{{task.text}} <i @click="deleteTask(n)" class="fa-solid fa-x"></i></li>
-        <li v-for="task in tasks" v-show="task.done"><del>{{task.text}}</del><i @click="deleteTask(n)" class="fa-solid fa-x"></i></li>
+        <!-- <li v-for="task, i in tasks" v-show="!task.done">{{task.text}} <i @click="deleteTask(i)" class="fa-solid fa-x"></i></li> -->
+        <!-- <li v-for="task, i in tasks" v-show="task.done"><del>{{task.text}}</del><i @click="deleteTask(i)" class="fa-solid fa-x"></i></li> -->
+        <li v-for="task, i in tasks" >
+            <!-- <span v-show="!task.done">{{task.text}} <i @click="deleteTask(i)" class="fa-solid fa-x"></i></span> -->
+            <!-- <span v-show="task.done"><del>{{task.text}}</del> <i @click="deleteTask(i)" class="fa-solid fa-x"></i></span> -->  
+            <span :class="task.done  ? 'underline-text' :''">{{task.text}} </span>
+            <i @click="deleteTask(i)" class="fa-solid fa-x"></i>
+        </li>
+
+
 
     </ul>
+    <div>
+        <input v-model.trim="newTask.text" type="text">
+        <button @click="">Aggiungi</button>
+    </div>
 </div>
     
 </body>
