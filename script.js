@@ -38,5 +38,10 @@ createApp({
             this.tasks.splice(i, 1);
             console.log(i);
         },
+
+        saveNewTask() {
+            const newTaskCopy = {...this.newTask};
+            this.tasks.push(newTaskCopy)
+        }
     },
 }).mount('#app')
