@@ -15,7 +15,9 @@
 <body>
 <div id="app">
     <ul>
-        <li v-for="task in tasks">{{task.text}}</li>
+        <li v-for="task in tasks" v-show="!task.done" >{{task.text}} </li>
+        <li v-for="task in tasks" v-show="task.done"><del>{{task.text}}</del></li>
+
     </ul>
 </div>
     
